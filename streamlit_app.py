@@ -29,13 +29,13 @@ def main():
 
 	elif choice == "Read":
 		# st.subheader("View Items")
-		with st.beta_expander("View All"):
+		with st.expander("View All"):
 			result = view_all_data()
 			# st.write(result)
 			clean_df = pd.DataFrame(result,columns=["Task","Status","Date"])
 			st.dataframe(clean_df)
 
-		with st.beta_expander("Task Status"):
+		with st.expander("Task Status"):
 			task_df = clean_df['Status'].value_counts().to_frame()
 			# st.dataframe(task_df)
 			task_df = task_df.reset_index()
@@ -47,7 +47,7 @@ def main():
 
 	elif choice == "Update":
 		st.subheader("Edit Items")
-		with st.beta_expander("Current Data"):
+		with st.expander("Current Data"):
 			result = view_all_data()
 			# st.write(result)
 			clean_df = pd.DataFrame(result,columns=["Task","Status","Date"])
@@ -63,7 +63,7 @@ def main():
 			task_status = task_result[0][1]
 			task_due_date = task_result[0][2]
 
-			col1,col2 = st.beta_columns(2)
+			col1,col2 = st.columns(2)
 			
 			with col1:
 				new_task = st.text_area("Task To Do",task)
@@ -97,7 +97,7 @@ def main():
 			delete_data(delete_by_task_name)
 			st.warning("Deleted: '{}'".format(delete_by_task_name))
 
-		with st.beta_expander("Updated Data"):
+		with st.expander("Updated Data"):
 			result = view_all_data()
 			# st.write(result)
 			clean_df = pd.DataFrame(result,columns=["Task","Status","Date"])
