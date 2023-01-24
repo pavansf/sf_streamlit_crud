@@ -73,7 +73,7 @@ def main():
 				edit_task_data(new_task,new_task_status,new_task_due_date,task,task_status,task_due_date)
 				st.success("Updated ::{} ::To {}".format(task,new_task))
 
-			with st.beta_expander("View Updated Data"):
+			with st.expander("View Updated Data"):
 				result = view_all_data()
 				# st.write(result)
 				clean_df = pd.DataFrame(result,columns=["Task","Status","Date"])
@@ -82,7 +82,7 @@ def main():
 
 	elif choice == "Delete":
 		st.subheader("Delete")
-		with st.beta_expander("View Data"):
+		with st.expander("View Data"):
 			result = view_all_data()
 			# st.write(result)
 			clean_df = pd.DataFrame(result,columns=["Task","Status","Date"])
