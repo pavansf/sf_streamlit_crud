@@ -5,18 +5,6 @@ import streamlit.components.v1 as stc
 
 
 
-# Data Viz Pkgs
-import plotly.express as px 
-
-
-HTML_BANNER = """
-    <div style="background-color:#464e5f;padding:10px;border-radius:10px">
-    <h1 style="color:white;text-align:center;">ToDo App (CRUD)</h1>
-    <p style="color:white;text-align:center;">Built with Streamlit</p>
-    </div>
-    """
-
-
 def main():
 	stc.html(HTML_BANNER)
 
