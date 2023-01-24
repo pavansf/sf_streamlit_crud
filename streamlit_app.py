@@ -6,8 +6,6 @@ import streamlit.components.v1 as stc
 
 
 def main():
-	stc.html(HTML_BANNER)
-
 
 	menu = ["Create","Read","Update","Delete","About"]
 	choice = st.sidebar.selectbox("Menu",menu)
